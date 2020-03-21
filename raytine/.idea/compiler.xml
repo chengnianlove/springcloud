@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="registryCenter" />
+        <module name="hystrix" />
+        <module name="provide" />
+        <module name="order" />
+        <module name="feign" />
+        <module name="hystrix-dashboard" />
+        <module name="ribbon" />
+        <module name="user" />
+        <module name="turbine" />
+        <module name="zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="feign" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
+      <module name="hystrix-dashboard" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="provide" options="" />
+      <module name="raytine" options="-parameters" />
+      <module name="registryCenter" options="-parameters" />
+      <module name="ribbon" options="-parameters" />
+      <module name="turbine" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

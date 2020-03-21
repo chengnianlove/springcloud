@@ -1,0 +1,26 @@
+server:
+  port: 9091
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka/, http://eureka2:8092/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: user
+  cloud:
+    inetutils:
+      timeout-seconds: 10
+  main:
+    #当遇到同样名字的时候，是否允许覆盖注册
+    allow-bean-definition-overriding: true
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

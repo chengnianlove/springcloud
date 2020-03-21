@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hystrix-dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8091/eureka, http://eureka2:8092/eureka
+server:
+  port: 8095

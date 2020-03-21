@@ -1,0 +1,17 @@
+server:
+  port: 8093
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8091/eureka, http://eureka2:8092/eureka
+spring:
+  application:
+    name: ribbon
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 3000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: true
+  restclient:
+    enabled: true

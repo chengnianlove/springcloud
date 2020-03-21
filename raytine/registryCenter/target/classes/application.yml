@@ -1,0 +1,21 @@
+server:
+  port: 8092
+eureka:
+  client:
+    register-with-eureka: true #是否将当前 Eureka Server 服务作为客户端进行注册
+    fetch-registry: true #是否获取其他 Eureka Server 服务的数据 不从自身拉取注册信息
+    service-url:
+      defaultZone: http://eureka1:8091/eureka/  #注册中心的访问地址
+  instance:
+    hostname: eureka2 #集群服务器之间，通过 hostname 来区分
+    lease-expiration-duration-in-seconds: 90  #最后一次心跳后，间隔多久认定微服务不可用，默认90
+  server:
+    enable-self-preservation: false #eureka 的自我保护状态：心跳失败的比例，
+                                    #在15分钟内是否低于85%,如果出现了低于的情况，
+                                    #Eureka Server会将当前的实例注册信息保护起来，
+                                    #同时提示一个警告，一旦进入保护模式，
+                                    #Eureka Server将会尝试保护其服务注册表中的信息，
+                                    #不再删除服务注册表中的数据。也就是不会注销任何微服务
+spring:
+  application:
+    name: eureka-server
